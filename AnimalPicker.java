@@ -13,9 +13,9 @@ public class AnimalPicker {
 
         //if statement for user animal choice
         if (animal.equalsIgnoreCase("d")) {
-            System.out.println("Beautiful dog ASCII art goes here");
+            printArt("d");
         } else if (animal.equalsIgnoreCase("c")){
-            System.out.println("Beautiful cat ASCII art goes here");
+            printArt("c");
         } else { //catches an invalid input
 
             boolean correct = false;
@@ -25,17 +25,40 @@ public class AnimalPicker {
                 //user picks animal
                 animal = input.nextLine();
                 if (animal.equalsIgnoreCase("d")) {
-                    System.out.println("Beautiful dog ASCII art goes here");
+                    printArt("d");
                     correct = true;
                 } else if (animal.equalsIgnoreCase("c")){
-                    System.out.println("Beautiful cat ASCII art goes here");
+                    printArt("c");
                     correct = true;
                 }
             }
 
         }
     } 
+
+    public static void printArt(String userPick){
+        if (userPick.equalsIgnoreCase("c")){ //cat ascii
+            System.out.println(" ,_     _\n" + 
+                                " |\\\\_,-~/\n" + 
+                                " / _  _ |    ,--.\n" + 
+                                "(  @  @ )   / ,-\'\n" +
+                                " \\  _T_/-._( (\n" +
+                                " /         `. \\\n" + 
+                                "|         _  \\ |\n" +
+                                " \\ \\ ,  /      |\n" +
+                                "  || |-_\\__   /\n" +
+                                " ((_/`(____,-\'");
+        } else if (userPick.equalsIgnoreCase("d")) { //dog ascii
+            System.out.println("    ___\n" +
+                                " __/_  `.  .-\"\"\"-.\n" +
+                                " \\_,` | \\-\'  /   )`-\')\n" +
+                                "  \"\") `\"`    \\  ((`\"`\n" +
+                                " ___Y  ,    .\'7 /|\n" +
+                                "(_,___/...-` (_/_/");
+        }
+    }
 }
 
-/*If the user enters in an invalid input, make the program continually ask the user to enter in a
-valid option until they do so*/
+/*Fill in the placeholder ASCII Art printlns with actual ASCII art. You can find ASCII art for dogs
+here. You can find ASCII art for cats here. To easily make the ASCII art format properly in a
+println statement, you can use this website I made here.*/
