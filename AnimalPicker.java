@@ -6,7 +6,7 @@ public class AnimalPicker {
 
         //Beginning print statments
         System.out.println("\nHello! Would you like to see the ASCII art of a dog or cat?");
-        System.out.println("Please enter \"d\" for dog or \"c\" for cat");
+        System.out.println("Please enter \"d\" for dog, \"c\" for cat, or \"f\" for fish");
 
         //user picks animal
         String animal = input.nextLine();
@@ -16,12 +16,14 @@ public class AnimalPicker {
             printArt("d");
         } else if (animal.equalsIgnoreCase("c")){
             printArt("c");
-        } else { //catches an invalid input
+        } else if (animal.equalsIgnoreCase("f")) {
+            printArt("f");
+        }else { //catches an invalid input
 
             boolean correct = false;
             //loops until user enters something valid
             while (correct == false) {
-                System.out.println("That is an invalid input, try again and enter \"d\" for dog or \"c\" for cat");
+                System.out.println("That is an invalid input, try again and enter \"d\" for dog, \"c\" for cat, or \"f\" for fish");
                 //user picks animal
                 animal = input.nextLine();
                 if (animal.equalsIgnoreCase("d")) {
@@ -30,10 +32,14 @@ public class AnimalPicker {
                 } else if (animal.equalsIgnoreCase("c")){
                     printArt("c");
                     correct = true;
+                } else if (animal.equalsIgnoreCase("f")) {
+                    printArt("f");
+                    correct = true;
                 }
             }
 
         }
+        input.close();
     } 
 
     public static void printArt(String userPick){
@@ -55,10 +61,15 @@ public class AnimalPicker {
                                 "  \"\") `\"`    \\  ((`\"`\n" +
                                 " ___Y  ,    .\'7 /|\n" +
                                 "(_,___/...-` (_/_/");
+        } else if (userPick.equalsIgnoreCase("f")) {
+            System.out.println("     /`-._\n" +
+                                "    /_,.._`:-\n" + 
+                                " ,.-\'   ,   `-:..-\')\n" + 
+                                ": o ):\';      _  {\n" + 
+                                " `-._ `\'__,.-\' \\`-.)\n" +
+                                "     `\\\\  \\,.-\'`");
         }
     }
 }
 
-/*Fill in the placeholder ASCII Art printlns with actual ASCII art. You can find ASCII art for dogs
-here. You can find ASCII art for cats here. To easily make the ASCII art format properly in a
-println statement, you can use this website I made here.*/
+/*Add an option for fish. You can find ASCII art for fish here*/
