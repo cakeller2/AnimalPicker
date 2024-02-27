@@ -17,9 +17,25 @@ public class AnimalPicker {
         } else if (animal.equalsIgnoreCase("c")){
             System.out.println("Beautiful cat ASCII art goes here");
         } else { //catches an invalid input
-            System.out.println("That is an invalid input, goodbye!");
+
+            boolean correct = false;
+            //loops until user enters something valid
+            while (correct == false) {
+                System.out.println("That is an invalid input, try again and enter \"d\" for dog or \"c\" for cat");
+                //user picks animal
+                animal = input.nextLine();
+                if (animal.equalsIgnoreCase("d")) {
+                    System.out.println("Beautiful dog ASCII art goes here");
+                    correct = true;
+                } else if (animal.equalsIgnoreCase("c")){
+                    System.out.println("Beautiful cat ASCII art goes here");
+                    correct = true;
+                }
+            }
+
         }
     } 
 }
 
-/*Make the program print an error message out if the user inputs an invalid option.*/
+/*If the user enters in an invalid input, make the program continually ask the user to enter in a
+valid option until they do so*/
