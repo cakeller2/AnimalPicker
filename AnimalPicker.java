@@ -16,10 +16,10 @@ public class AnimalPicker {
             System.out.println("Beautiful dog ASCII art goes here");
         } else if (animal.equalsIgnoreCase("c")){
             System.out.println("Beautiful cat ASCII art goes here");
+        } else { //catches an invalid input
+            System.out.println("That is an invalid input, goodbye!");
         }
     } 
 }
 
-/*Ask the user which animal they would like to see: a dog or a cat. Include if statements based on
-which option they chose, and print out to the user placeholder text. For example, if the user
-chose “cat”, you would print out something along the lines of “CAT ASCII ART HERE”.*/
+/*Make the program print an error message out if the user inputs an invalid option.*/
